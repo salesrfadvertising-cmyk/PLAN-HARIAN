@@ -194,7 +194,7 @@ function parse(raw,SESIMAP){
     j.time=t?t[1].padStart(2,'0')+'.'+t[2]:'';
   });
   const all=(hj+' '+jobs.map(j=>j.what).join(' ')).toLowerCase();
-  const KW={pengantaran:/pengantar|antar|kirim/,pemasangan:/pemasang|pasang|install/,pembongkaran:/bongkar/,perbaikan:/perbaik|repair|servis/,pengambilan:/pengambil|ambil|jemput/,finishing:/finishing|finish/};
+  const KW={pengantaran:/pengantar|antar|kirim/,pemasangan:/pemasang|pasang|install/,pembongkaran:/bongkar/,perbaikan:/perbaik|repair|servis/,pengambilan:/pengambil|ambil|jemput/,finishing:/finishing|finish/,'survey lokasi':/survei|survey/};
   const jenis=Object.keys(KW).filter(k=>KW[k].test(all));
   let jam=headTime||(jobs.find(j=>j.time)||{}).time||'';
   let sesi=(hj.toLowerCase().match(/\b(pagi|siang|sore|malam)\b/)||[])[1]||'';
@@ -209,7 +209,7 @@ const DEF={
   sapaan:'Pak kita ada',
   template:'{sapaan} {jenis} {waktu} {jam}, berikut listnya :',
   zona:'WIB',
-  jenis:['pengantaran','pemasangan','pembongkaran','perbaikan','pengambilan','finishing','Survey Lokasi'],
+  jenis:['pengantaran','pemasangan','pembongkaran','perbaikan','pengambilan','finishing','survey lokasi'],
   sesi:{pagi:'09.00',siang:'13.00',sore:'16.00',malam:'19.00'},
   labels:{tim:'Tim',lokasi:'Lokasi',waktu:'Waktu',tujuan:'Tujuan',pic:'PIC',catatan:'Catatan',simulasi:'Simulasi'},
   penutup:'',
