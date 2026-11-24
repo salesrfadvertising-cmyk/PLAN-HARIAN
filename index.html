@@ -359,7 +359,7 @@ function renderCards(){
     <textarea rows="2" data-i="${i}" data-f="maps" style="margin-top:6px" placeholder="Terisi otomatis setelah memilih dari daftar, atau tempel link Google Maps">${esc(j.maps)}</textarea>
     <div class="row"><a class="btn" id="ms${i}" target="_blank" rel="noopener" href="https://www.google.com/maps">🔍 Cari di Google Maps</a><a class="btn hidden" id="mo${i}" target="_blank" rel="noopener" href="#">📍 Buka link lokasi</a></div>
     <p class="hint">Kalau tidak ada di daftar: <b>Cari di Google Maps</b> → <b>Bagikan</b> → <b>Salin link</b> → tempel di kolom Alamat Maps.</p>
-    <label><b>Why</b> — Tujuan / alasan</label><input data-i="${i}" data-f="why" value="${esc(j.why)}" placeholder="Biasanya tidak ada di pesan WA — isi / tanyakan">
+    <label><b>Why</b> — Tujuan / alasan</label><input data-i="${i}" data-f="why" value="${esc(j.why)}" placeholder="Alasan pekerjaan: Mengapa pekerjaan ini perlu dilakukan?">
     <label><b>How</b> — Langkah &amp; catatan (centang saat sudah dikerjakan)</label>
     <div>${j.how.map((h,k)=>`<div class="how"><input type="checkbox" data-i="${i}" data-h="${k}" data-k="d" ${h.done?'checked':''}><input data-i="${i}" data-h="${k}" data-k="t" value="${esc(h.t)}"><button class="x" data-act="delhow" data-i="${i}" data-h="${k}">✕</button></div>`).join('')}</div>
     <div class="row"><button class="g" data-act="addhow" data-i="${i}">+ Tambah langkah</button></div>
